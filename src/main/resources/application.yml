@@ -9,7 +9,7 @@ pf-adm:
   render-brand-text: true
   render-logo: false
   render-full-screen-toggle: false
-  render-bread-crumb: false
+  render-bread-crumb: true
   support-bootstrap-icons: false
   support-font-awesome: true
   index-page: /web/index.xhtml
