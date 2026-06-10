@@ -4,24 +4,41 @@
                 xmlns:ui="jakarta.faces.facelets"
                 xmlns:h="jakarta.faces.html"
                 xmlns:p="http://primefaces.org/ui"
-                template="#{layoutView.template}"
->
+                template="#{layoutView.template}" >
 
   <ui:define name="title">
-    Skins
+    Layout &amp; Skins
   </ui:define>
 
   <ui:define name="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page">Skins</li>
+    <li class="breadcrumb-item active" aria-current="page">Layout &amp; Skins</li>
   </ui:define>
 
   <ui:define name="description">
-    Switch the current showcase session between the AdminFaces-compatible `pf-adm` skins.
+    Switch the current showcase session between the sidebar and top-menu layouts and the
+    AdminFaces-compatible `pf-adm` skins.
   </ui:define>
 
   <ui:define name="body">
     <h:form id="skin-form">
       <div class="row g-4">
+        <div class="col-12">
+          <p:panel header="Session Layout Switcher" styleClass="card no-border">
+            <p>
+              Toggle between the default sidebar layout (<code>/admin.xhtml</code>) and the top-menu
+              layout (<code>/admin-top.xhtml</code>). The page reloads so the whole template shell
+              re-roots on the selected pf-adm layout. In top-menu mode the left sidebar is hidden and
+              the navigation moves into the navbar.
+            </p>
+            <div class="d-flex align-items-center gap-2">
+              <p:selectBooleanCheckbox id="top-layout" value="#{showcaseLayoutView.topMenuLayout}"
+                                       itemLabel="Use top-menu layout (admin-top.xhtml)">
+                <p:ajax process="@this" update="@none" oncomplete="window.location.reload();"/>
+              </p:selectBooleanCheckbox>
+            </div>
+          </p:panel>
+        </div>
+
         <div class="col-12 col-xl-7">
           <p:panel header="Session Skin Switcher" styleClass="card no-border h-100">
             <p>
@@ -49,6 +66,12 @@
             <div class="table-responsive">
               <table class="table table-bordered mb-0">
                 <tbody>
+                <tr>
+                  <th scope="row">Current layout</th>
+                  <td>#{showcaseLayoutView.topMenuLayout ? 'top-menu' : 'left-menu'}
+                    (<code>#{showcaseLayoutView.template}</code>)
+                  </td>
+                </tr>
                 <tr>
                   <th scope="row">Current skin</th>
                   <td>#{skinView.skin}</td>
