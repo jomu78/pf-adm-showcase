@@ -1,0 +1,35 @@
+= Showcase
+
+== Running from source
+
+The project is based on Java 25 and maven 3.9.x.
+
+----
+git clone https://github.com/jomu78/pf-adm-showcase
+cd pf-adm-showcase
+mvn clean install
+java -jar target/pf-adm-showcase-<version>-starter.jar
+----
+Access the showcase on http://localhost:8080/showcase
+
+
+== Running from Docker
+There is a docker image available.
+
+----
+docker run -p 8080:8080 jomu78/pf-adm-showcase
+----
+Access the showcase on http://localhost:8080/showcase
+
+IMPORTANT: The image is not yet publicly available.
+
+== Creating docker image
+To create the docker image locally, run the following commands.
+
+----
+git clone https://github.com/jomu78/pf-adm-showcase
+cd pf-adm-showcase
+mvn clean install
+mvn docker:build
+----
+
