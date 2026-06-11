@@ -35,7 +35,6 @@
 
     <!-- plugin versions -->
     <docker-maven-plugin.version>0.48.1</docker-maven-plugin.version>
-    <central-publishing-maven-plugin.version>0.10.0</central-publishing-maven-plugin.version>
     <maven-release-plugin.version>3.3.1</maven-release-plugin.version>
   </properties>
 
@@ -149,11 +148,10 @@
       </plugin>
 
       <plugin>
-        <groupId>org.sonatype.central</groupId>
-        <artifactId>central-publishing-maven-plugin</artifactId>
-        <version>${central-publishing-maven-plugin.version}</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
         <configuration>
-          <skipPublishing>true</skipPublishing>
+          <skip>true</skip>
         </configuration>
       </plugin>
     </plugins>
