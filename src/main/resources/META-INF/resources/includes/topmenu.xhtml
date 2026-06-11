@@ -1,12 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="jakarta.faces.facelets"
+                xmlns:p="http://primefaces.org/ui"
 >
-  <li class="nav-item d-none d-md-block">
-    <a href="#" class="nav-link">Home</a>
-  </li>
-  <li class="nav-item d-none d-md-block">
-    <a href="#" class="nav-link">Contact</a>
-  </li>
+
+  <!--
+    Top-menu layout (admin-top.xhtml): render the full navigation horizontally
+    in the navbar, mirroring the sidebar's left menu but using Bootstrap
+    dropdowns for the grouped entries.
+  -->
+  <ui:fragment rendered="#{showcaseLayoutView.topMenuLayout}">
+    <li class="nav-item">
+      <p:link outcome="/web/index.xhtml" styleClass="nav-link">
+        <i class="nav-icon pi pi-home"/>
+        Dashboard
+      </p:link>
+    </li>
+
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button"
+         aria-expanded="false">
+        <i class="nav-icon pi pi-box"/>
+        UI Elements
+      </a>
+      <ul class="dropdown-menu">
+        <li><p:link outcome="/web/accordion.xhtml" styleClass="dropdown-item">Accordion</p:link></li>
+        <li><p:link outcome="/web/autocomplete.xhtml" styleClass="dropdown-item">AutoComplete</p:link></li>
+        <li><p:link outcome="/web/buttons.xhtml" styleClass="dropdown-item">Buttons</p:link></li>
+        <li><p:link outcome="/web/datatable.xhtml" styleClass="dropdown-item">Datatable</p:link></li>
+        <li><p:link outcome="/web/dataview.xhtml" styleClass="dropdown-item">Dataview</p:link></li>
+        <li><p:link outcome="/web/datepicker.xhtml" styleClass="dropdown-item">DatePicker</p:link></li>
+        <li><p:link outcome="/web/fileupload.xhtml" styleClass="dropdown-item">FileUpload</p:link></li>
+        <li><p:link outcome="/web/inputgroup.xhtml" styleClass="dropdown-item">InputGroup</p:link></li>
+        <li><p:link outcome="/web/notificationbar.xhtml" styleClass="dropdown-item">NotificationBar</p:link></li>
+        <li><p:link outcome="/web/panel.xhtml" styleClass="dropdown-item">Panels</p:link></li>
+        <li><p:link outcome="/web/steps.xhtml" styleClass="dropdown-item">Steps</p:link></li>
+        <li><p:link outcome="/web/tabview.xhtml" styleClass="dropdown-item">Tabview</p:link></li>
+        <li><p:link outcome="/web/toolbar.xhtml" styleClass="dropdown-item">Toolbar</p:link></li>
+        <li><p:link outcome="/web/tree.xhtml" styleClass="dropdown-item">Tree</p:link></li>
+      </ul>
+    </li>
+
+    <li class="nav-item">
+      <p:link outcome="/web/skins.xhtml" styleClass="nav-link">
+        <i class="nav-icon pi pi-palette"/>
+        Layout &amp; Skins
+      </p:link>
+    </li>
+
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button"
+         aria-expanded="false">
+        <i class="nav-icon pi pi-exclamation-triangle"/>
+        Errors
+      </a>
+      <ul class="dropdown-menu">
+        <li><p:link outcome="/web/denied.xhtml" styleClass="dropdown-item">403</p:link></li>
+        <li><p:link outcome="/web/exception.xhtml" styleClass="dropdown-item">Exceptions</p:link></li>
+      </ul>
+    </li>
+  </ui:fragment>
+
+  <!-- Sidebar layout (admin.xhtml): the sidebar carries the navigation, so the
+       navbar keeps only a couple of demo links. -->
+  <ui:fragment rendered="#{not showcaseLayoutView.topMenuLayout}">
+    <li class="nav-item d-none d-md-block">
+      <a href="#" class="nav-link">Home</a>
+    </li>
+    <li class="nav-item d-none d-md-block">
+      <a href="#" class="nav-link">Contact</a>
+    </li>
+  </ui:fragment>
 
 </ui:composition>

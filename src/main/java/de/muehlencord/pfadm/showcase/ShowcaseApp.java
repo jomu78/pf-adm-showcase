@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Joern Muehlencord, 2025-04-10
  * @since 0.1.0
  */
-@SpringBootApplication(scanBasePackages = "de.muehlencord.pfadm.showcase.config")
+@SpringBootApplication
 public class ShowcaseApp {
 
   public static void main(String[] args) {

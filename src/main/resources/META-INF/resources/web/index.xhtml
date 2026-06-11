@@ -11,6 +11,10 @@
     Dashboard
   </ui:define>
 
+  <ui:define name="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+  </ui:define>
+
   <ui:define name="description">
     AdminFaces-style dashboard overview adapted to the `pf-adm` showcase components and sample data.
   </ui:define>
@@ -192,10 +196,6 @@
               <tr>
                 <th scope="row">Fullscreen toggle</th>
                 <td>#{pfAdmConfig.renderFullScreenToggle}</td>
-              </tr>
-              <tr>
-                <th scope="row">Bootstrap Icons</th>
-                <td>#{pfAdmConfig.supportBootstrapIcons}</td>
               </tr>
               </tbody>
             </table>
