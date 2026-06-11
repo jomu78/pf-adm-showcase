@@ -19,6 +19,7 @@ pf-adm:
   template-path: /WEB-INF/template/template.xhtml
   template-top-path: /WEB-INF/template/template-top.xhtml
   left-menu-template: true
+  render-ajax-status: true
 joinfaces:
   faces:
     project-stage: Production
