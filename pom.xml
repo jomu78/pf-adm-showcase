@@ -10,14 +10,14 @@
 
   <groupId>de.muehlencord.pf-adm</groupId>
   <artifactId>pf-adm-showcase</artifactId>
-  <version>0.3.0</version>
+  <version>0.3.1-SNAPSHOT</version>
   <name>pf-adm-showcase</name>
 
   <scm>
     <connection>https://github.com/jomu78/pf-adm-showcase.git</connection>
     <developerConnection>scm:git:git@github.com:jomu78/pf-adm-showcase.git</developerConnection>
     <url>https://github.com/jomu78/pf-adm-showcase</url>
-    <tag>pf-adm-showcase-0.3.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
