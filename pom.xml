@@ -14,6 +14,18 @@
   <version>0.3.0-SNAPSHOT</version>
   <name>pf-adm-showcase</name>
 
+  <scm>
+    <connection>https://github.com/jomu78/pf-adm-showcase.git</connection>
+    <developerConnection>scm:git:git@github.com:jomu78/pf-adm-showcase.git</developerConnection>
+    <url>https://github.com/jomu78/pf-adm-showcase</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/jomu78/pf-adm-showcase/issues</url>
+  </issueManagement>
+
   <properties>
     <java.version>25</java.version>
 
