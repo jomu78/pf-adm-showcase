@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>4.0.6</version>
-    <relativePath/>
+    <relativePath />
   </parent>
 
   <groupId>de.muehlencord.pf-adm</groupId>
   <artifactId>pf-adm-showcase</artifactId>
-  <version>0.3.0-SNAPSHOT</version>
+  <version>0.3.0</version>
   <name>pf-adm-showcase</name>
 
   <scm>
     <connection>https://github.com/jomu78/pf-adm-showcase.git</connection>
     <developerConnection>scm:git:git@github.com:jomu78/pf-adm-showcase.git</developerConnection>
     <url>https://github.com/jomu78/pf-adm-showcase</url>
-    <tag>HEAD</tag>
+    <tag>pf-adm-showcase-0.3.0</tag>
   </scm>
 
   <issueManagement>
