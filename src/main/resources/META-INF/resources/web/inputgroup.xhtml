@@ -26,10 +26,10 @@
           <p:panel header="Text And Currency Add-ons" styleClass="card no-border h-100">
             <div class="row g-3">
               <div class="col-12">
-                <p:outputLabel for="email-local" value="Team mailbox"/>
+                <p:outputLabel for="email-local" value="Team mailbox" indicateRequired="false"/>
                 <div class="ui-inputgroup">
                   <span class="ui-inputgroup-addon">@</span>
-                  <p:inputText id="email-local" value="#{inputGroupView.emailLocalPart}"/>
+                  <p:inputText id="email-local" value="#{inputGroupView.emailLocalPart}" required="true"/>
                   <span class="ui-inputgroup-addon">@pf-adm.dev</span>
                 </div>
               </div>
@@ -37,7 +37,7 @@
                 <p:outputLabel for="budget" value="Monthly budget"/>
                 <div class="ui-inputgroup">
                   <span class="ui-inputgroup-addon">$</span>
-                  <p:inputText id="budget" value="#{inputGroupView.amount}"/>
+                  <p:inputText id="budget" value="#{inputGroupView.amount}" required="true"/>
                   <span class="ui-inputgroup-addon">USD</span>
                 </div>
               </div>

@@ -29,7 +29,7 @@
     <java.version>25</java.version>
 
     <!-- dependency versions -->
-    <pf-adm.version>0.3.0</pf-adm.version>
+    <pf-adm.version>0.4.0-SNAPSHOT</pf-adm.version>
     <joinfaces.version>6.0.6.1</joinfaces.version>
 
     <!-- plugin versions -->

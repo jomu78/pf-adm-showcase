@@ -12,6 +12,7 @@ pf-adm:
   render-bread-crumb: true
   render-menu-search: true
   render-scroll-to-top: true
+  render-form-asterisks: true
   support-bootstrap-icons: false
   support-font-awesome: true
   index-page: /web/index.xhtml
