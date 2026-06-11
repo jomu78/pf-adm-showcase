@@ -11,6 +11,7 @@ pf-adm:
   render-full-screen-toggle: false
   render-bread-crumb: true
   render-menu-search: true
+  render-scroll-to-top: true
   support-bootstrap-icons: false
   support-font-awesome: true
   index-page: /web/index.xhtml

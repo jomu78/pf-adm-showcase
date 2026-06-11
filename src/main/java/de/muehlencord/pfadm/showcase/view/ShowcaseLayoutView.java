@@ -22,7 +22,7 @@ import lombok.Setter;
  * so only Spring beans can be constructor-injected here. {@link PfAdmProperties}
  * is a Spring bean (registered by pf-adm's auto-configuration), while
  * {@code PfAdmConfig} and {@link LayoutView} are CDI beans from pf-adm's bean
- * archive — those must be resolved via EL at runtime instead.
+ * archive - those must be resolved via EL at runtime instead.
  *
  * @author Joern Muehlencord, 2025-05-05
  * @since 0.1.0
