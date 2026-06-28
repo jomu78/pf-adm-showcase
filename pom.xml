@@ -4,13 +4,13 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>4.0.6</version>
+    <version>4.0.7</version>
     <relativePath />
   </parent>
 
   <groupId>de.muehlencord.pf-adm</groupId>
   <artifactId>pf-adm-showcase</artifactId>
-  <version>0.3.1-SNAPSHOT</version>
+  <version>0.4.0-SNAPSHOT</version>
   <name>pf-adm-showcase</name>
 
   <scm>
@@ -30,7 +30,7 @@
 
     <!-- dependency versions -->
     <pf-adm.version>0.4.0-SNAPSHOT</pf-adm.version>
-    <joinfaces.version>6.0.6.1</joinfaces.version>
+    <joinfaces.version>6.0.7</joinfaces.version>
 
     <!-- plugin versions -->
     <docker-maven-plugin.version>0.48.1</docker-maven-plugin.version>
