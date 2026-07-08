@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:h="jakarta.faces.html"
+                xmlns:p="http://primefaces.org/ui"
+                template="#{layoutView.template}"
+>
+
+  <ui:define name="title">
+    PanelGrid
+  </ui:define>
+
+  <ui:define name="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">PanelGrid</li>
+  </ui:define>
+
+  <ui:define name="description">
+    This page shows how to control the column widths of a
+    <p:link value="p:panelGrid"
+            href="https://www.primefaces.org/showcase/ui/panel/panelGrid.xhtml"/>
+    input form with the pf-adm <code>pfadm-col-*</code> utility classes.
+    Pass them per column through <code>columnClasses</code> and each class fixes the
+    matching cell to a percentage width. Available widths are
+    <code>pfadm-col-10</code>, <code>pfadm-col-20</code>, <code>pfadm-col-25</code>,
+    <code>pfadm-col-30</code> and <code>pfadm-col-50</code>. Set the grid itself to
+    <code>width:100%</code> so the percentages resolve against the full row.
+  </ui:define>
+
+  <ui:define name="body">
+    <h:form id="panelgrid-form">
+      <div class="row g-4">
+
+        <div class="col-12 col-xl-6">
+          <p:panel header="Label + Field (20 / 30 / 50)" styleClass="card no-border h-100">
+            <p:panelGrid columns="3"
+                         columnClasses="pfadm-col-20,pfadm-col-30,pfadm-col-50"
+                         styleClass="ui-panelgrid-blank w-100">
+              <p:outputLabel for="firstName" value="First name"/>
+              <p:inputText id="firstName" value="#{panelGridView.firstName}"/>
+              <h:outputText value="Narrow label, medium field, wide hint column."/>
+
+              <p:outputLabel for="lastName" value="Last name"/>
+              <p:inputText id="lastName" value="#{panelGridView.lastName}"/>
+              <h:outputText value="The three widths add up to 100%."/>
+            </p:panelGrid>
+          </p:panel>
+        </div>
+
+        <div class="col-12 col-xl-6">
+          <p:panel header="Two Fields Per Row (25 / 25 / 25 / 25)" styleClass="card no-border h-100">
+            <p:panelGrid columns="4"
+                         columnClasses="pfadm-col-25,pfadm-col-25,pfadm-col-25,pfadm-col-25"
+                         styleClass="ui-panelgrid-blank w-100">
+              <p:outputLabel for="city" value="City"/>
+              <p:inputText id="city" value="#{panelGridView.city}"/>
+              <p:outputLabel for="zip" value="ZIP"/>
+              <p:inputText id="zip" value="#{panelGridView.zip}"/>
+
+              <p:outputLabel for="phone" value="Phone"/>
+              <p:inputText id="phone" value="#{panelGridView.phone}"/>
+              <p:outputLabel for="country" value="Country"/>
+              <p:inputText id="country" value="#{panelGridView.country}"/>
+            </p:panelGrid>
+          </p:panel>
+        </div>
+
+        <div class="col-12">
+          <p:panel header="Equal Halves (50 / 50)" styleClass="card no-border">
+            <p:panelGrid columns="2"
+                         columnClasses="pfadm-col-50,pfadm-col-50"
+                         styleClass="ui-panelgrid-blank w-100">
+              <p:outputLabel for="email" value="Email"/>
+              <p:outputLabel for="notes" value="Notes"/>
+
+              <p:inputText id="email" value="#{panelGridView.email}"/>
+              <p:inputTextarea id="notes" value="#{panelGridView.notes}" rows="2"/>
+            </p:panelGrid>
+          </p:panel>
+        </div>
+
+        <div class="col-12">
+          <p:panel header="Width Reference" styleClass="card no-border">
+            <p>Every coloured bar is a <code>p:panelGrid</code> cell tagged with one
+              <code>pfadm-col-*</code> class. Each row fills 100% of the grid, so the
+              bars show the widths in proportion.</p>
+
+            <p:panelGrid columns="4"
+                         columnClasses="pfadm-col-10,pfadm-col-20,pfadm-col-20,pfadm-col-50"
+                         styleClass="ui-panelgrid-blank mb-2 w-100">
+              <h:outputText styleClass="d-block bg-primary text-white text-center py-1" value="col-10"/>
+              <h:outputText styleClass="d-block bg-info text-white text-center py-1" value="col-20"/>
+              <h:outputText styleClass="d-block bg-info text-white text-center py-1" value="col-20"/>
+              <h:outputText styleClass="d-block bg-success text-white text-center py-1" value="col-50"/>
+            </p:panelGrid>
+
+            <p:panelGrid columns="3"
+                         columnClasses="pfadm-col-30,pfadm-col-20,pfadm-col-50"
+                         styleClass="ui-panelgrid-blank mb-2 w-100">
+              <h:outputText styleClass="d-block bg-warning text-dark text-center py-1" value="col-30"/>
+              <h:outputText styleClass="d-block bg-info text-white text-center py-1" value="col-20"/>
+              <h:outputText styleClass="d-block bg-success text-white text-center py-1" value="col-50"/>
+            </p:panelGrid>
+
+            <p:panelGrid columns="2"
+                         columnClasses="pfadm-col-50,pfadm-col-50"
+                         styleClass="ui-panelgrid-blank w-100">
+              <h:outputText styleClass="d-block bg-success text-white text-center py-1" value="col-50"/>
+              <h:outputText styleClass="d-block bg-success text-white text-center py-1" value="col-50"/>
+            </p:panelGrid>
+          </p:panel>
+        </div>
+
+      </div>
+    </h:form>
+  </ui:define>
+
+</ui:composition>

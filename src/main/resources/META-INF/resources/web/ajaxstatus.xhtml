@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:h="jakarta.faces.html"
+                xmlns:f="jakarta.faces.core"
+                xmlns:p="http://primefaces.org/ui"
+                template="#{layoutView.template}"
+>
+
+  <ui:define name="title">
+    AJAX Status
+  </ui:define>
+
+  <ui:define name="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">AJAX Status</li>
+  </ui:define>
+
+  <ui:define name="description">
+    This page demonstrates the global AJAX busy overlay enabled via
+    <code>pf-adm.render-ajax-status</code>. While a request is in flight the overlay shows
+    <code>pf-adm.loading-image</code> &#8212; defaulting to the bundled <code>ajaxloadingbar.gif</code> when unset.
+  </ui:define>
+
+  <ui:define name="body">
+    <h:form id="ajax-status-form">
+      <div class="row g-4">
+        <div class="col-12 col-xl-6">
+          <p:panel header="Trigger a slow AJAX request" styleClass="card no-border h-100">
+            <p class="mb-3">
+              Pick a duration and run the task. The request blocks on the server for that long, so the
+              loading overlay stays visible until it completes.
+            </p>
+            <div class="ui-inputgroup mb-3">
+              <span class="ui-inputgroup-addon">Duration</span>
+              <p:selectOneMenu id="seconds" value="#{ajaxStatusView.seconds}">
+                <f:selectItem itemLabel="1 second" itemValue="1"/>
+                <f:selectItem itemLabel="3 seconds" itemValue="3"/>
+                <f:selectItem itemLabel="5 seconds" itemValue="5"/>
+              </p:selectOneMenu>
+            </div>
+            <p:commandButton value="Run slow task"
+                             icon="pi pi-clock"
+                             styleClass="btn-primary"
+                             actionListener="#{ajaxStatusView.runSlowTask}"
+                             update="result" ignoreAutoUpdate="true"/>
+          </p:panel>
+        </div>
+
+        <div class="col-12 col-xl-6">
+          <p:panel header="Result" styleClass="card no-border h-100">
+            <h:panelGrid id="result" columns="2" cellpadding="8">
+              <h:outputText value="Completed runs"/>
+              <h:outputText value="#{ajaxStatusView.runCount}"/>
+
+              <h:outputText value="Last finished at"/>
+              <h:outputText value="#{empty ajaxStatusView.lastRunFinishedAt ? '-' : ajaxStatusView.lastRunFinishedAt}"/>
+            </h:panelGrid>
+          </p:panel>
+        </div>
+      </div>
+    </h:form>
+  </ui:define>
+
+</ui:composition>
